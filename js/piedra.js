@@ -1,20 +1,50 @@
+function patito(minimo,maximo){
+	var numero=Math.floor(Math.random()*(maximo-minimo+1)+minimo);
+	return numero;
+}
+
+
 var piedra = 0;
 var papel = 1;
 var tijera = 2;
 
-var opcionUsuario;
-var opcionMaquina;
+var opciones=["Piedra","Papel","Tijeras"]
 
-opcionUsuario= prompt("Que eliges? \n Piedra:0\nPape:l\nTijeras:2",0);
+ar opcionUsuario;//variable para asignar los valores que ingresa el usuario
+var opcionMaquina=patito(0,2);
 
-if(opcionUsuario==0){
-	alert("Elegiste piedra");
-}else if(opcionUsuario==1){
-	alert("Elegiste papel");
+opcionUsuario= prompt("Que eliges? \n Piedra:0\nPape:l\nTijeras:2",0); //Se presenta el menu de opcion en el prompt
 
-}else if(opcionUsuario==2){
-	alert("Elegiste tijeras!");
+alert("Elegiste"+opciones[opcionUsuario]);
+alert("JavaScript eligió"+ opciones[opcionMaquina]);
 
+
+
+if(opcionUsuario==piedra){ //se valida el valor del usuaio con el valor asignado para piedra
+	if(opcionMaquina==piedra){
+		alert("Empate");
+	}
+	else if(opcionMaquina ==papel){
+		alert("Perdiste");
+
+	}
+	else if(opcionMaquina==tijera){
+		alert("ganaste");
+	}
+	else if(opcionUsuario==papel){
+		alert("empate");
+	}
+	else if(opcionMaquina==tijera){
+		alert("Perdiste");
+	}
+}else if(opcionUsuario==tijera){
+	if(opcionMaquina==piedra){
+		alert("Perdiste");
+	}else if(opcionMaquina==papel){
+		alert("Ganaste!");
+	}else if(opcionMaquina==tijera){
+		alert("Empate");
+	}
 }else{
-	alert("Error: solo debes elegir entre 0 y 2");
+	alert("¿Pos que carajo?");
 }
