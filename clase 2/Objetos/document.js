@@ -1,30 +1,40 @@
-
-function Pokemon(){
-	var estructuraPokemon= {
-	nombre:"Pikachu",
-	tipo: "ELectrico",
-	vida:100,
-	ataque:55
-}; 
-	return estructuraPokemon;
+function Pokemon(n,v,a){
+	this.grito="Pika!"; //se pone el this para que se puedan ver por el objeto
+	this.nombre=n;
+	this.vida=v;
+	this.ataque=a;
+	this.gritar=function(){ //Otra forma de declarar funciones
+		alert(this.grito);
+	}
 }
 
-var pikachu=Pokemon;
-var bulbasaur=Pokemon;
-bulbasaur.nombre="Bulbasaur";
-bulbasaur.tipo="Tierra";
-bulbasaur.vida=90;
-bulbasaur.ataque=50;
+function inicio(){
+	var rattata=new Pokemon("Rattata",40,2);
+	rattata.vida=rattata.vida-13;
+	nombrePokemon.innerText=rattata.nombre;
+	datosPokemon.innerText="El pokemon tiene una vida de:"+rattata.vida+"\nTiene un ataque de: "+rattata.ataque;
 
-document.write(bulbasaur.nombre);
-
+}
 
 
+// function Pokemon(nombrePokemon,vidaPoke, ataPoke){
+	
+// 	var estructuraPokemon= {
+// 	nombre:nombrePokemon,
+// 	tipo: "ELectrico",
+// 	vida:vidaPoke,
+// 	ataque:ataPoke,
+// 	datos:{tipo:"Tierra",debilidad:"Fuego"}//Una estructura dentro de una estructura
+// }; 
+// 	return estructuraPokemon;
+// }
+
+// var pikachu=Pokemon("pikachu", 100, 55);
+// var bulbasaur=Pokemon("Bulbasaur",90,50);
 
 
-
-
-
+// //document.write(bulbasaur.datos.tipo);
+// console.log(bulbasaur);
 
 
 //los objetos se declaran con la primera letra en mayuscula
