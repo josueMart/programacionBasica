@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclos</title>
+	<script type="text/javascript">
+		var c, t, b;
+		function calcular(){
+
+			var numero=Number(t.value);
+			var calculo=1;
+			var n;
+			/*while(n <=numero){
+				calculo=calculo*n;
+				n++;
+
+			}*/
+
+
+			for(n=1;n<=numero;n++){
+				calculo=calculo*n;
+			}
+			c.innerHTML="<strong>"+calculo+"</strong>";
+	}
+		function inicio(){
+			 c=document.getElementById("caja");//se toma el componente div que tiene como ID 
+			 t=document.getElementById("Alejandra");
+			 b=document.getElementById("botoncito");
+			b.addEventListener("click",calcular);//se esta agregando un evento al elemento button 
+			//caja 
+			//c.innerHTML+="<h1><strong>Hola <br/></strong>papa</h1>"//inner.HTML puedes manipular HTML
+			//Elemento iterador es la variable que hace el ciclo
+			/*while(numeros<=50){
+				residuo=numeros %2;
+				if(residuo==0){
+					c.innerHTML+=" "+numeros;
+				}
+				numeros++;
+			}*/
+		}
+
+	</script>
+</head>
+<body>
+<input type="text"id="Alejandra"/>
+<input type="button" id="botoncito" value="Tocame~">
+	<div id="caja"></div>
+	<div>Otra caja</div>
+	<script>inicio();</script>
+</body>
+</html>
+
